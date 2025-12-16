@@ -41,7 +41,7 @@ export class LoginComponent {
         next: () => {
           this.router.navigate([this.returnUrl]);
         },
-        error: (error) => {
+        error: () => {
           this.errorMessage = 'Invalid email or password. Try: customer@example.com or admin@example.com';
         }
       });
@@ -50,7 +50,7 @@ export class LoginComponent {
         next: () => {
           this.router.navigate([this.returnUrl]);
         },
-        error: (error) => {
+        error: () => {
           this.errorMessage = 'Registration failed. Please try again.';
         }
       });

@@ -40,7 +40,7 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
-  login(email: string, password: string): Observable<User> {
+  login(email: string, _password: string): Observable<User> {
     // Mock login - in real app, this would call an API
     const user = this.mockUsers.find(u => u.email === email);
     
@@ -53,7 +53,7 @@ export class AuthService {
     throw new Error('Invalid credentials');
   }
 
-  register(name: string, email: string, phone: string, password: string): Observable<User> {
+  register(name: string, email: string, phone: string, _password: string): Observable<User> {
     // Mock registration
     const newUser: User = {
       id: (this.mockUsers.length + 1).toString(),

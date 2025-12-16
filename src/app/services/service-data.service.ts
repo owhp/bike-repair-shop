@@ -59,8 +59,6 @@ export class ServiceDataService {
     }
   ];
 
-  constructor() { }
-
   getServices(): Observable<Service[]> {
     return of(this.mockServices).pipe(delay(300)); // Simulate network delay
   }

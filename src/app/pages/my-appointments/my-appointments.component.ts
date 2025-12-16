@@ -54,7 +54,7 @@ export class MyAppointmentsComponent implements OnInit {
   }
 
   getStatusClass(status: string): string {
-    const statusMap: { [key: string]: string } = {
+    const statusMap: Record<string, string> = {
       'pending': 'status-pending',
       'confirmed': 'status-confirmed',
       'cancelled': 'status-cancelled',
