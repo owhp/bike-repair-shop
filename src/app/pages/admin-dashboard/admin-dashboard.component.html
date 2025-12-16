@@ -1,0 +1,72 @@
+<div class="admin-page">
+  <h1>Admin Dashboard</h1>
+  
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>Total Appointments</h3>
+      <p class="stat-number">{{ appointments.length }}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Pending</h3>
+      <p class="stat-number">{{ getCountByStatus('pending') }}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Confirmed</h3>
+      <p class="stat-number">{{ getCountByStatus('confirmed') }}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Completed</h3>
+      <p class="stat-number">{{ getCountByStatus('completed') }}</p>
+    </div>
+  </div>
+
+  <div class="loading" *ngIf="loading">
+    <p>Loading appointments...</p>
+  </div>
+
+  <div class="appointments-section" *ngIf="!loading">
+    <h2>All Appointments</h2>
+    
+    <div class="no-appointments" *ngIf="appointments.length === 0">
+      <p>No appointments yet.</p>
+    </div>
+
+    <div class="appointments-table" *ngIf="appointments.length > 0">
+      <div class="appointment-row header">
+        <div class="col">Service</div>
+        <div class="col">Customer</div>
+        <div class="col">Date & Time</div>
+        <div class="col">Status</div>
+        <div class="col">Actions</div>
+      </div>
+      
+      <div class="appointment-row" *ngFor="let appointment of appointments">
+        <div class="col">{{ appointment.serviceName }}</div>
+        <div class="col">
+          <div>{{ appointment.contactName }}</div>
+          <div class="small">{{ appointment.contactEmail }}</div>
+          <div class="small">{{ appointment.contactPhone }}</div>
+        </div>
+        <div class="col">
+          {{ appointment.dateTime | date:'short' }}
+        </div>
+        <div class="col">
+          <span class="status" [ngClass]="getStatusClass(appointment.status)">
+            {{ appointment.status | uppercase }}
+          </span>
+        </div>
+        <div class="col actions">
+          <select 
+            [value]="appointment.status"
+            (change)="onStatusChange($event, appointment.id)"
+            class="status-select">
+            <option value="pending">Pending</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="cancelled">Cancelled</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

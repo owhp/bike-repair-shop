@@ -1,0 +1,29 @@
+<div class="home-page">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Bike Repair Shop</h1>
+      <p class="hero-subtitle">Your trusted partner for professional bike repairs and maintenance</p>
+      <div class="hero-actions">
+        <a routerLink="/book" class="btn btn-primary">Book a Repair</a>
+        <a routerLink="/services" class="btn btn-secondary">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Why Choose Us</h2>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Get Your Bike Fixed?</h2>
+    <p>Book your repair appointment today and ride with confidence tomorrow!</p>
+    <a routerLink="/book" class="btn btn-primary">Book Now</a>
+  </section>
+</div>

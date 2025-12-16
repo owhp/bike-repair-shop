@@ -1,0 +1,68 @@
+<div class="booking-container">
+  <div class="booking-header">
+    <h1>Book a Repair - Contact Details</h1>
+    <div class="progress-steps">
+      <span class="step completed">1. Select Service</span>
+      <span class="step completed">2. Date & Time</span>
+      <span class="step active">3. Contact Details</span>
+      <span class="step">4. Review</span>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <form (ngSubmit)="continue()">
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input 
+          type="text" 
+          id="name" 
+          [(ngModel)]="contactName" 
+          name="name"
+          placeholder="Your full name" 
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input 
+          type="email" 
+          id="email" 
+          [(ngModel)]="contactEmail" 
+          name="email"
+          placeholder="your@email.com" 
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone *</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          [(ngModel)]="contactPhone" 
+          name="phone"
+          placeholder="123-456-7890" 
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Notes (Optional)</label>
+        <textarea 
+          id="notes" 
+          [(ngModel)]="notes" 
+          name="notes"
+          rows="4"
+          placeholder="Any special requests or information about the repair needed"></textarea>
+      </div>
+
+      <div class="button-group">
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+        <button 
+          type="submit" 
+          class="btn btn-primary"
+          [disabled]="!contactName || !contactEmail || !contactPhone">
+          Continue
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

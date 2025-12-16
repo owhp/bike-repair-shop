@@ -1,0 +1,81 @@
+.booking-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.booking-header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.progress-steps {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.step {
+  padding: 0.5rem 1rem;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.step.active {
+  background-color: #3498db;
+  color: white;
+  font-weight: 500;
+}
+
+.services-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.service-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-left: 4px solid #3498db;
+}
+
+.service-item h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.service-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: #e74c3c;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.duration {
+  color: #95a5a6;
+  font-size: 0.9rem;
+}
