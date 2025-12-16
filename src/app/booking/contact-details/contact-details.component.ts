@@ -5,11 +5,10 @@ import { Router } from '@angular/router';
 import { BookingService } from '../../services/booking.service';
 
 @Component({
-  selector: 'app-contact-details',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './contact-details.component.html',
-  styleUrl: './contact-details.component.css'
+    selector: 'app-contact-details',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './contact-details.component.html',
+    styleUrl: './contact-details.component.css'
 })
 export class ContactDetailsComponent implements OnInit {
   contactName = '';

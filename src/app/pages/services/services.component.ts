@@ -5,11 +5,10 @@ import { ServiceDataService } from '../../services/service-data.service';
 import { Service } from '../../models/service.interface';
 
 @Component({
-  selector: 'app-services',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './services.component.html',
-  styleUrl: './services.component.css'
+    selector: 'app-services',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './services.component.html',
+    styleUrl: './services.component.css'
 })
 export class ServicesComponent implements OnInit {
   services: Service[] = [];

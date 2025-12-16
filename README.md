@@ -1,6 +1,6 @@
 # Bike Repair Shop Web Application
 
-An Angular web application for managing bike repair shop bookings and appointments. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+An Angular web application for managing bike repair shop bookings and appointments. This project uses [Angular CLI](https://github.com/angular/angular-cli) version 20.3.13.
 
 ## Features
 
@@ -120,9 +120,9 @@ Run `ng lint` to lint the project using ESLint. This has been configured to enfo
 
 ## Technologies Used
 
-- Angular 17.3.17
-- TypeScript
-- RxJS
+- Angular 20.3.15
+- TypeScript 5.8.3
+- RxJS 7.8
 - Angular Router
 - Standalone Components
 - ESLint for code quality

@@ -4,11 +4,10 @@ import { BookingService } from '../../services/booking.service';
 import { Appointment } from '../../models/appointment.interface';
 
 @Component({
-  selector: 'app-admin-dashboard',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './admin-dashboard.component.html',
-  styleUrl: './admin-dashboard.component.css'
+    selector: 'app-admin-dashboard',
+    imports: [CommonModule],
+    templateUrl: './admin-dashboard.component.html',
+    styleUrl: './admin-dashboard.component.css'
 })
 export class AdminDashboardComponent implements OnInit {
   appointments: Appointment[] = [];

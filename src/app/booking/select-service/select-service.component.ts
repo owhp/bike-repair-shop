@@ -6,11 +6,10 @@ import { BookingService } from '../../services/booking.service';
 import { Service } from '../../models/service.interface';
 
 @Component({
-  selector: 'app-select-service',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './select-service.component.html',
-  styleUrl: './select-service.component.css'
+    selector: 'app-select-service',
+    imports: [CommonModule],
+    templateUrl: './select-service.component.html',
+    styleUrl: './select-service.component.css'
 })
 export class SelectServiceComponent implements OnInit {
   services: Service[] = [];

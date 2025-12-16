@@ -6,11 +6,10 @@ import { AuthService } from '../../services/auth.service';
 import { Appointment } from '../../models/appointment.interface';
 
 @Component({
-  selector: 'app-my-appointments',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './my-appointments.component.html',
-  styleUrl: './my-appointments.component.css'
+    selector: 'app-my-appointments',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './my-appointments.component.html',
+    styleUrl: './my-appointments.component.css'
 })
 export class MyAppointmentsComponent implements OnInit {
   appointments: Appointment[] = [];

@@ -6,11 +6,10 @@ import { AuthService } from '../../services/auth.service';
 import { Booking } from '../../models/booking.interface';
 
 @Component({
-  selector: 'app-review-confirm',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './review-confirm.component.html',
-  styleUrl: './review-confirm.component.css'
+    selector: 'app-review-confirm',
+    imports: [CommonModule],
+    templateUrl: './review-confirm.component.html',
+    styleUrl: './review-confirm.component.css'
 })
 export class ReviewConfirmComponent implements OnInit {
   booking?: Booking;

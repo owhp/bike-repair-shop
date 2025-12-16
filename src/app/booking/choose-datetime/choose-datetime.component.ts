@@ -5,11 +5,10 @@ import { Router } from '@angular/router';
 import { BookingService } from '../../services/booking.service';
 
 @Component({
-  selector: 'app-choose-datetime',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './choose-datetime.component.html',
-  styleUrl: './choose-datetime.component.css'
+    selector: 'app-choose-datetime',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './choose-datetime.component.html',
+    styleUrl: './choose-datetime.component.css'
 })
 export class ChooseDatetimeComponent implements OnInit {
   selectedDate = '';
