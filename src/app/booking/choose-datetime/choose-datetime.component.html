@@ -1,0 +1,46 @@
+<div class="booking-container">
+  <div class="booking-header">
+    <h1>Book a Repair - Choose Date & Time</h1>
+    <div class="progress-steps">
+      <span class="step completed">1. Select Service</span>
+      <span class="step active">2. Date & Time</span>
+      <span class="step">3. Contact Details</span>
+      <span class="step">4. Review</span>
+    </div>
+  </div>
+
+  <div class="datetime-form">
+    <div class="form-group">
+      <label for="date">Select Date</label>
+      <input 
+        type="date" 
+        id="date" 
+        [(ngModel)]="selectedDate" 
+        [min]="getCurrentDate()"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label>Select Time</label>
+      <div class="time-slots">
+        <button 
+          *ngFor="let time of availableTimes"
+          class="time-slot"
+          [class.selected]="selectedTime === time"
+          (click)="selectedTime = time">
+          {{ time }}
+        </button>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-secondary" (click)="goBack()">Back</button>
+      <button 
+        class="btn btn-primary" 
+        (click)="continue()"
+        [disabled]="!selectedDate || !selectedTime">
+        Continue
+      </button>
+    </div>
+  </div>
+</div>

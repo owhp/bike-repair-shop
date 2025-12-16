@@ -1,0 +1,111 @@
+.booking-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.booking-header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.progress-steps {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.step {
+  padding: 0.5rem 1rem;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.step.active {
+  background-color: #3498db;
+  color: white;
+  font-weight: 500;
+}
+
+.step.completed {
+  background-color: #27ae60;
+  color: white;
+}
+
+.contact-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #c0392b;
+}
+
+.btn-primary:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #7f8c8d;
+}

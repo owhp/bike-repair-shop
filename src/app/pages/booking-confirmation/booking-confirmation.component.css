@@ -1,0 +1,71 @@
+.confirmation-page {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.confirmation-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #27ae60;
+  color: white;
+  font-size: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.message {
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #c0392b;
+}
+
+.btn-secondary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #2980b9;
+}
