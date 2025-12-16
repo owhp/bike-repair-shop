@@ -58,7 +58,7 @@
         <div class="col actions">
           <select 
             [value]="appointment.status"
-            (change)="updateStatus(appointment.id, $any($event.target).value)"
+            (change)="onStatusChange($event, appointment.id)"
             class="status-select">
             <option value="pending">Pending</option>
             <option value="confirmed">Confirmed</option>

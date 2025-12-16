@@ -49,6 +49,11 @@ export class AdminDashboardComponent implements OnInit {
     });
   }
 
+  onStatusChange(event: Event, appointmentId: string): void {
+    const target = event.target as HTMLSelectElement;
+    this.updateStatus(appointmentId, target.value as Appointment['status']);
+  }
+
   getStatusClass(status: string): string {
     const statusMap: Record<string, string> = {
       'pending': 'status-pending',
