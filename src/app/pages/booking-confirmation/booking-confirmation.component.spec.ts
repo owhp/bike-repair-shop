@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { BookingConfirmationComponent } from './booking-confirmation.component';
 
@@ -8,7 +9,8 @@ describe('BookingConfirmationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BookingConfirmationComponent]
+      imports: [BookingConfirmationComponent],
+      providers: [provideRouter([])],
     })
     .compileComponents();
     
