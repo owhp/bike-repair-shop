@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BookingService } from '../../services/booking.service';
@@ -13,13 +13,11 @@ import { Appointment } from '../../models/appointment.interface';
   styleUrl: './my-appointments.component.css'
 })
 export class MyAppointmentsComponent implements OnInit {
+  private bookingService = inject(BookingService);
+  private authService = inject(AuthService);
+
   appointments: Appointment[] = [];
   loading = true;
-
-  constructor(
-    private bookingService: BookingService,
-    private authService: AuthService
-  ) {}
 
   ngOnInit(): void {
     const currentUser = this.authService.currentUserValue;

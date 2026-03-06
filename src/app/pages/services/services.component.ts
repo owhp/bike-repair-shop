@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
+
 import { RouterModule } from '@angular/router';
 import { ServiceDataService } from '../../services/service-data.service';
 import { Service } from '../../models/service.interface';
@@ -7,14 +7,14 @@ import { Service } from '../../models/service.interface';
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
 export class ServicesComponent implements OnInit {
-  services: Service[] = [];
+  private serviceDataService = inject(ServiceDataService);
 
-  constructor(private serviceDataService: ServiceDataService) {}
+  services: Service[] = [];
 
   ngOnInit(): void {
     this.serviceDataService.getServices().subscribe(

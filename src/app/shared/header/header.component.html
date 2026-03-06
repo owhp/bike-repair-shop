@@ -12,16 +12,17 @@
         <a routerLink="/services" routerLinkActive="active">Services</a>
         <a routerLink="/contact" routerLinkActive="active">Contact</a>
         <a routerLink="/book" routerLinkActive="active" class="btn-primary">Book Repair</a>
-        
-        <ng-container *ngIf="currentUser; else notLoggedIn">
+
+        @if (currentUser) {
           <a routerLink="/my-appointments" routerLinkActive="active">My Appointments</a>
-          <a *ngIf="currentUser.role === 'admin'" routerLink="/admin" routerLinkActive="active">Admin</a>
+          @if (currentUser.role === 'admin') {
+            <a routerLink="/admin" routerLinkActive="active">Admin</a>
+          }
           <span class="user-name">{{ currentUser.name }}</span>
           <button (click)="logout()" class="btn-secondary">Logout</button>
-        </ng-container>
-        <ng-template #notLoggedIn>
+        } @else {
           <a routerLink="/login" routerLinkActive="active" class="btn-secondary">Login</a>
-        </ng-template>
+        }
       </nav>
     </div>
   </div>

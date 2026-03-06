@@ -9,41 +9,40 @@
     </div>
   </div>
 
-  <div class="review-content" *ngIf="booking">
-    <h2>Review Your Booking</h2>
-
-    <div class="review-section">
-      <h3>Service</h3>
-      <p class="highlight">{{ booking.serviceName }}</p>
+  @if (booking) {
+    <div class="review-content">
+      <h2>Review Your Booking</h2>
+      <div class="review-section">
+        <h3>Service</h3>
+        <p class="highlight">{{ booking.serviceName }}</p>
+      </div>
+      <div class="review-section">
+        <h3>Date & Time</h3>
+        <p class="highlight">{{ booking.dateTime | date:'fullDate' }} at {{ booking.dateTime | date:'shortTime' }}</p>
+      </div>
+      <div class="review-section">
+        <h3>Contact Information</h3>
+        <p>Name: {{ booking.contactName }}</p>
+        <p>Email: {{ booking.contactEmail }}</p>
+        <p>Phone: {{ booking.contactPhone }}</p>
+      </div>
+      @if (booking.notes) {
+        <div class="review-section">
+          <h3>Notes</h3>
+          <p>{{ booking.notes }}</p>
+        </div>
+      }
+      <div class="button-group">
+        <button class="btn btn-secondary" (click)="goBack()" [disabled]="isSubmitting">
+          Back
+        </button>
+        <button
+          class="btn btn-primary"
+          (click)="confirm()"
+          [disabled]="isSubmitting">
+          {{ isSubmitting ? 'Confirming...' : 'Confirm Booking' }}
+        </button>
+      </div>
     </div>
-
-    <div class="review-section">
-      <h3>Date & Time</h3>
-      <p class="highlight">{{ booking.dateTime | date:'fullDate' }} at {{ booking.dateTime | date:'shortTime' }}</p>
-    </div>
-
-    <div class="review-section">
-      <h3>Contact Information</h3>
-      <p>Name: {{ booking.contactName }}</p>
-      <p>Email: {{ booking.contactEmail }}</p>
-      <p>Phone: {{ booking.contactPhone }}</p>
-    </div>
-
-    <div class="review-section" *ngIf="booking.notes">
-      <h3>Notes</h3>
-      <p>{{ booking.notes }}</p>
-    </div>
-
-    <div class="button-group">
-      <button class="btn btn-secondary" (click)="goBack()" [disabled]="isSubmitting">
-        Back
-      </button>
-      <button 
-        class="btn btn-primary" 
-        (click)="confirm()"
-        [disabled]="isSubmitting">
-        {{ isSubmitting ? 'Confirming...' : 'Confirm Booking' }}
-      </button>
-    </div>
-  </div>
+  }
 </div>

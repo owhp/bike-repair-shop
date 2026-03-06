@@ -48,7 +48,8 @@ h1 {
   margin-bottom: 2rem;
 }
 
-.form-group label {
+.form-group label,
+.form-group .form-label {
   display: block;
   margin-bottom: 0.5rem;
   color: #2c3e50;

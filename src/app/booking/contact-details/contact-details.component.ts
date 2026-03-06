@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
+
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BookingService } from '../../services/booking.service';
@@ -7,20 +7,18 @@ import { BookingService } from '../../services/booking.service';
 @Component({
   selector: 'app-contact-details',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './contact-details.component.html',
   styleUrl: './contact-details.component.css'
 })
 export class ContactDetailsComponent implements OnInit {
+  private bookingService = inject(BookingService);
+  private router = inject(Router);
+
   contactName = '';
   contactEmail = '';
   contactPhone = '';
   notes = '';
-
-  constructor(
-    private bookingService: BookingService,
-    private router: Router
-  ) {}
 
   ngOnInit(): void {
     const booking = this.bookingService.currentBookingValue;

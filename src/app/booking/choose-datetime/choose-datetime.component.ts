@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
+
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BookingService } from '../../services/booking.service';
@@ -7,19 +7,17 @@ import { BookingService } from '../../services/booking.service';
 @Component({
   selector: 'app-choose-datetime',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './choose-datetime.component.html',
   styleUrl: './choose-datetime.component.css'
 })
 export class ChooseDatetimeComponent implements OnInit {
+  private bookingService = inject(BookingService);
+  private router = inject(Router);
+
   selectedDate = '';
   selectedTime = '';
   availableTimes = ['09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00', '17:00'];
-
-  constructor(
-    private bookingService: BookingService,
-    private router: Router
-  ) {}
 
   ngOnInit(): void {
     const booking = this.bookingService.currentBookingValue;
