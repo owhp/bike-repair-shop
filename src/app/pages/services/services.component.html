@@ -3,20 +3,22 @@
   <p class="subtitle">Professional bike repair and maintenance services</p>
 
   <div class="services-grid">
-    <div class="service-card" *ngFor="let service of services">
-      <h3>{{ service.name }}</h3>
-      <p class="description">{{ service.description }}</p>
-      <div class="service-details">
-        <div class="detail">
-          <span class="label">Price:</span>
-          <span class="value">${{ service.price }}</span>
+    @for (service of services; track service) {
+      <div class="service-card">
+        <h3>{{ service.name }}</h3>
+        <p class="description">{{ service.description }}</p>
+        <div class="service-details">
+          <div class="detail">
+            <span class="label">Price:</span>
+            <span class="value">${{ service.price }}</span>
+          </div>
+          <div class="detail">
+            <span class="label">Duration:</span>
+            <span class="value">{{ service.duration }} min</span>
+          </div>
         </div>
-        <div class="detail">
-          <span class="label">Duration:</span>
-          <span class="value">{{ service.duration }} min</span>
-        </div>
+        <a routerLink="/book" class="btn btn-primary">Book This Service</a>
       </div>
-      <a routerLink="/book" class="btn btn-primary">Book This Service</a>
-    </div>
+    }
   </div>
 </div>

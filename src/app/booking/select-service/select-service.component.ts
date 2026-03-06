@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { ServiceDataService } from '../../services/service-data.service';
 import { BookingService } from '../../services/booking.service';
@@ -8,18 +8,16 @@ import { Service } from '../../models/service.interface';
 @Component({
   selector: 'app-select-service',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './select-service.component.html',
   styleUrl: './select-service.component.css'
 })
 export class SelectServiceComponent implements OnInit {
-  services: Service[] = [];
+  private serviceDataService = inject(ServiceDataService);
+  private bookingService = inject(BookingService);
+  private router = inject(Router);
 
-  constructor(
-    private serviceDataService: ServiceDataService,
-    private bookingService: BookingService,
-    private router: Router
-  ) {}
+  services: Service[] = [];
 
   ngOnInit(): void {
     this.serviceDataService.getServices().subscribe(

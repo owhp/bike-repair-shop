@@ -10,13 +10,21 @@
   </div>
 
   <div class="services-list">
-    <div class="service-item" *ngFor="let service of services" (click)="selectService(service)">
-      <h3>{{ service.name }}</h3>
-      <p class="description">{{ service.description }}</p>
-      <div class="service-info">
-        <span class="price">${{ service.price }}</span>
-        <span class="duration">{{ service.duration }} min</span>
+    @for (service of services; track service) {
+      <div
+        class="service-item"
+        role="button"
+        tabindex="0"
+        (click)="selectService(service)"
+        (keyup.enter)="selectService(service)"
+        (keyup.space)="selectService(service)">
+        <h3>{{ service.name }}</h3>
+        <p class="description">{{ service.description }}</p>
+        <div class="service-info">
+          <span class="price">${{ service.price }}</span>
+          <span class="duration">{{ service.duration }} min</span>
+        </div>
       </div>
-    </div>
+    }
   </div>
 </div>

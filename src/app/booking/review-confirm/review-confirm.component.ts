@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { BookingService } from '../../services/booking.service';
@@ -13,14 +13,12 @@ import { Booking } from '../../models/booking.interface';
   styleUrl: './review-confirm.component.css'
 })
 export class ReviewConfirmComponent implements OnInit {
+  private bookingService = inject(BookingService);
+  private authService = inject(AuthService);
+  private router = inject(Router);
+
   booking?: Booking;
   isSubmitting = false;
-
-  constructor(
-    private bookingService: BookingService,
-    private authService: AuthService,
-    private router: Router
-  ) {}
 
   ngOnInit(): void {
     this.booking = this.bookingService.currentBookingValue;

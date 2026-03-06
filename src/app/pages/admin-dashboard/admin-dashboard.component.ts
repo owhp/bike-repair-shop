@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BookingService } from '../../services/booking.service';
 import { Appointment } from '../../models/appointment.interface';
@@ -11,10 +11,10 @@ import { Appointment } from '../../models/appointment.interface';
   styleUrl: './admin-dashboard.component.css'
 })
 export class AdminDashboardComponent implements OnInit {
+  private bookingService = inject(BookingService);
+
   appointments: Appointment[] = [];
   loading = true;
-
-  constructor(private bookingService: BookingService) {}
 
   ngOnInit(): void {
     this.loadAppointments();
